@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_211043) do
     t.integer "round_id"
     t.integer "player_id"
     t.string "role", default: "guesser"
+    t.text "guesses", default: "--- []\n"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

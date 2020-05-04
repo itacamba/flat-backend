@@ -28,9 +28,16 @@ class PlayerRoundsController < ApplicationController
 
     def update
         
-        byebug
+        # byebug
         p_round = PlayerRound.find(params[:id])
         p_round.update(role: params[:role])
     end
+
+    def guesses
+        p_round = PlayerRound.find(params[:id])
+        p_round.update(guesses: p_round.guesses.push(params[:guess]) )
+        render json: p_round
+    end
+
 
 end
