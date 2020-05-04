@@ -3,6 +3,7 @@ Game.destroy_all
 Word.destroy_all
 Round.destroy_all
 PlayerRound.destroy_all
+Painting.destroy_all
 
 
 

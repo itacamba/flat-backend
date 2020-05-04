@@ -3,4 +3,6 @@ class Round < ApplicationRecord
     has_many :players, through: :player_rounds, dependent: :destroy
     belongs_to :word
     belongs_to :game
+    has_one :painting
+
 end

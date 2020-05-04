@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :paintings
   resources :players, only: [:index, :show, :create, :update]
   resources :player_rounds, only: [:index, :show, :update]
   resources :words, only: [:index, :show]
