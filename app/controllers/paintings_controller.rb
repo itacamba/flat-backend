@@ -1,5 +1,11 @@
 class PaintingsController < ApplicationController
 
+
+  def index
+    paintings = Painting.all
+    render json: paintings
+  end
+
   def post
 
   end
@@ -15,6 +21,10 @@ class PaintingsController < ApplicationController
     render json: Painting.find(params[:id])
   end
   
+  def destroy
+    painting = Painting.find(params[:id])
+    painting.destroy
+  end
 
     
 end
