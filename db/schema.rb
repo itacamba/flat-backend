@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_211043) do
     t.integer "game_id"
     t.integer "word_id"
     t.boolean "round_in_progress", default: true
+    t.text "guesses", default: "--- []\n"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
