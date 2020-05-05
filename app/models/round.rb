@@ -4,5 +4,5 @@ class Round < ApplicationRecord
     belongs_to :word
     belongs_to :game
     has_one :painting
-
+    serialize :guesses , Array # to make possible Array datatype 
 end

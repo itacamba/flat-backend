@@ -41,4 +41,10 @@ class RoundsController < ApplicationController
         render json: PlayerRoundSerializer.new(drawer, options) 
 
     end
+    def guesses
+    
+        round = Round.find(params[:id])
+        round.update(guesses: round.guesses.push(params[:guess]) )
+        # render json: round
+    end
 end

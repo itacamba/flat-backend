@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   post '/games/:id/join', to: "games#join"
   patch '/rounds/:id/endround', to: "rounds#endround"
-  patch '/player_rounds/:id/guesses', to: "player_rounds#guesses"
+  patch '/rounds/:id/guesses', to: "rounds#guesses"
 
+ 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
