@@ -15,8 +15,8 @@ class RoundsController < ApplicationController
         #find round update :round_in_progress = false
         round = Round.find(params[:id])
         round.update(round_in_progress: false)
-        #round update :number
-        round.update(number: (round.number += 1))
+        #round update :number 
+        round.update(number: (round.number += 1), guesses: [])
         #round update :word
         new_word = Word.all.sample
         round.update(word: new_word)
@@ -28,7 +28,7 @@ class RoundsController < ApplicationController
        
        
         # Select all players that are not the current player, and map through array and change :role to "guesser"
-        all_players_arr.select{|pr| pr.player_id != player.id}.map{|pr| pr.update(role: "blablabla")}
+        all_players_arr.select{|pr| pr.player_id != player.id}.map{|pr| pr.update(role: "guesser")}
         # Find player round where player_id = to current player , and change :role to "drawer"
         all_players_arr.select{|pr| pr.player_id == player.id}.map{|pr| pr.update(role: "drawer")}
         
