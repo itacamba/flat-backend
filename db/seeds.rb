@@ -1,3 +1,4 @@
+require 'faker'
 Player.destroy_all
 Game.destroy_all
 Word.destroy_all
@@ -36,6 +37,11 @@ w11 = Word.create(name: "laptop", topic: "computers")
 w12 = Word.create(name: "chicken", topic: "food")
 w13 = Word.create(name: "wizard", topic: "Harry Potter")
 w14 = Word.create(name: "boom box", topic: "music")
+# WORDSS
+
+
+
+
 
 
 #ROUNDS

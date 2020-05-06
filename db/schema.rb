@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_211043) do
   end
 
   create_table "paintings", force: :cascade do |t|
-    t.string "url"
+    t.text "url"
     t.integer "round_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

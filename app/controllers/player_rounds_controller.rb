@@ -19,9 +19,15 @@ class PlayerRoundsController < ApplicationController
         #     :round => {:only => [:name, :game_id, :word_id => {:only => [:name]}]},
         #     :player => {:only => [:name, :points]}
         # }, :except => [:created_at, :updated_at])
+        # options = {
+        #     include: [:player , :round, :'round.word']
+        # }
+
         options = {
-            include: [:player , :round, :'round.word']
+            include: [:player , :round, :'round.word', :'round.player_rounds.players', :'round.painting']
         }
+
+        # byebug
         
         render json: PlayerRoundSerializer.new(player_round, options) 
     end
