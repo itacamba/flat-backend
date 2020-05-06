@@ -26,23 +26,31 @@ game3 = Game.create()
 w1 = Word.create(name: "popcorn", topic: "movie")
 w2 = Word.create(name: "Kanye West", topic: "music")
 w3 = Word.create(name: "banana", topic: "food")
-w4 = Word.create(name: "book of spells", topic: "Harry Potter")
-w5 = Word.create(name: "cake", topic: "food")
-w6 = Word.create(name: "treble clef", topic: "music")
-w7 = Word.create(name: "Bad Boys", topic: "movie")
-w8 = Word.create(name: "firebolt", topic: "Harry Potter")
-w9 = Word.create(name: "Ruby", topic: "computers")
-w10 = Word.create(name: "Javascript", topic: "computers")
-w11 = Word.create(name: "laptop", topic: "computers")
-w12 = Word.create(name: "chicken", topic: "food")
-w13 = Word.create(name: "wizard", topic: "Harry Potter")
-w14 = Word.create(name: "boom box", topic: "music")
-# WORDSS
+w4 = Word.create(name: "cake", topic: "food")
 
 
+ 15.times do 
+    Word.create(name: Faker::Creature::Animal.name, topic: "Animals" )
+ end
+ 
+ 30.times do 
+    Word.create(name: Faker::Food.fruits , topic: "Food" )
+ end
+ 5.times do 
+    Word.create(name: Faker::TvShows::GameOfThrones.character , topic: "Game of Thrones" )
+ end
+ 15.times do 
+    Word.create(name: Faker::Movies::HarryPotter.character  , topic: "Harry Potter" )
+ end
 
-
-
+ 15.times do 
+    Word.create(name:  Faker::TvShows::FamilyGuy.character  , topic: "Family Guy" )
+ end
+ 10.times do 
+    Word.create(name:  Faker::TvShows::Simpsons.character , topic: "The Simpsons" )
+ end
+ 
+ 
 
 #ROUNDS
 r1 = Round.create(number: 1, game_id: game1.id, word_id: w1.id)

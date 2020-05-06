@@ -7,7 +7,7 @@ class RoundsController < ApplicationController
     
     def show
         round = Round.find(params[:id])
-        render json: round.as_json(include: :player_rounds)
+        render json: round.as_json(include: [:word, :player_rounds, :players])
     end
 
     # def endround
@@ -82,4 +82,27 @@ class RoundsController < ApplicationController
         round.update(guesses: round.guesses.push(params[:guess]) )
         # render json: round
     end
+
+    def word
+        
+        round = Round.find(params[:id])
+        new_word = Word.all.sample
+        round.update(word: new_word)
+        # options = {
+        #     include: [:'round.word']
+        # }
+        #RoundSerializer.new(round, options)
+        render json: round.as_json(include: :word, except: :guesses)
+    end
+
+
+    def guesser_view
+        # byebug
+        round = Round.find(params[:id])
+        user = Player.find(params[:player_id])
+        render json: [user, round.as_json(include: :word)]
+        #round.as_json(include: [:user, :word, :player_rounds, :players])
+    
+    end
+
 end
